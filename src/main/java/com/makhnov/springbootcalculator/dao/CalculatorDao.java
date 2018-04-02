@@ -2,10 +2,9 @@ package com.makhnov.springbootcalculator.dao;
 
 import com.makhnov.springbootcalculator.PostfixResult;
 import org.jooq.*;
+import org.jooq.sources.tables.PostfixResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import static org.jooq.impl.DSL.*;
 
 @Repository
 public class CalculatorDao {
@@ -18,21 +17,18 @@ public class CalculatorDao {
 
     public String saveResult(String postfixExpression) throws Exception {
         PostfixResult postfixResult = new PostfixResult();
-        Field resultField = field("result");
-        Field postfixExpressionField = field("postfix_expression");
 
-        dslContext.insertInto(table(name("postfix_results")),
-                field("postfix_expression"), field("result"))
+        Record record = dslContext.insertInto(PostfixResults.POSTFIX_RESULTS_,
+                PostfixResults.POSTFIX_RESULTS_.POSTFIX_EXPRESSION, PostfixResults.POSTFIX_RESULTS_.RESULT)
                 .values(postfixExpression, postfixResult.getResult(postfixExpression))
-                .execute();
+                .returning(PostfixResults.POSTFIX_RESULTS_.ID)
+                .fetchOne();
 
-        String recordGet = dslContext.select(resultField)
-                .from(table(name("postfix_results")))
-                .where(postfixExpressionField.eq(postfixExpression))
-                .fetch()
-                .getValue(0, resultField)
-                .toString();
-        return recordGet;
+        return dslContext.select(PostfixResults.POSTFIX_RESULTS_.POSTFIX_EXPRESSION, PostfixResults.POSTFIX_RESULTS_.RESULT)
+                .from(PostfixResults.POSTFIX_RESULTS_)
+                .where(PostfixResults.POSTFIX_RESULTS_.ID.eq(record.getValue(PostfixResults.POSTFIX_RESULTS_.ID)))
+                .fetchOne()
+                .formatJSON();
     }
 }
 
