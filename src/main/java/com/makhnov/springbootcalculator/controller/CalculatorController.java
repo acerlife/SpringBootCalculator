@@ -2,7 +2,6 @@ package com.makhnov.springbootcalculator.controller;
 
 import com.makhnov.springbootcalculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,8 +16,7 @@ public class CalculatorController {
 
     @GetMapping("/{postfix_expression}")
     public @ResponseBody
-    HttpStatus saveResult(@PathVariable String postfix_expression) throws Exception{
-       calculatorService.saveResult(postfix_expression);
-       return HttpStatus.OK;
+    String saveResult(@PathVariable String postfix_expression) throws Exception{
+       return calculatorService.saveResult(postfix_expression);
     }
 }
