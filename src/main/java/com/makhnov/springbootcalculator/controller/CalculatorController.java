@@ -1,6 +1,7 @@
 package com.makhnov.springbootcalculator.controller;
 
 import com.makhnov.springbootcalculator.dao.CalculatorDao;
+import com.makhnov.springbootcalculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class CalculatorController {
     @Autowired
-   private CalculatorDao calculatorDao;
+   private CalculatorService calculatorService;
 
-    @GetMapping("/{string}")
-    public @ResponseBody void saveResult(@PathVariable String string) throws Exception{
-        calculatorDao.saveResult(string);
+    @GetMapping("/{postfix_expression}")
+    public @ResponseBody void saveResult(@PathVariable String postfix_expression) throws Exception{
+        calculatorService.saveResult(postfix_expression);
     }
 }
