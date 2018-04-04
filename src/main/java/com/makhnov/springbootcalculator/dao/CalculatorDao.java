@@ -1,13 +1,14 @@
 package com.makhnov.springbootcalculator.dao;
 
+import com.makhnov.springbootcalculator.CalculatorResult;
 import com.makhnov.springbootcalculator.PostfixResult;
+import com.makhnov.springbootcalculator.jooq.tables.PostfixResults;
 import org.jooq.*;
-import org.jooq.sources.tables.PostfixResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class CalculatorDao {
+public class CalculatorDao{
     private final DSLContext dslContext;
 
     @Autowired
@@ -15,7 +16,7 @@ public class CalculatorDao {
         this.dslContext = dslContext;
     }
 
-    public String saveResult(String postfixExpression) throws Exception {
+    public CalculatorResult saveResult(String postfixExpression) throws Exception {
         PostfixResult postfixResult = new PostfixResult();
 
         Record record = dslContext.insertInto(PostfixResults.POSTFIX_RESULTS_,
@@ -24,11 +25,11 @@ public class CalculatorDao {
                 .returning(PostfixResults.POSTFIX_RESULTS_.ID)
                 .fetchOne();
 
-        return dslContext.select(PostfixResults.POSTFIX_RESULTS_.POSTFIX_EXPRESSION, PostfixResults.POSTFIX_RESULTS_.RESULT)
+        return dslContext.select(PostfixResults.POSTFIX_RESULTS_.RESULT)
                 .from(PostfixResults.POSTFIX_RESULTS_)
                 .where(PostfixResults.POSTFIX_RESULTS_.ID.eq(record.getValue(PostfixResults.POSTFIX_RESULTS_.ID)))
-                .fetchOne()
-                .formatJSON();
+                .fetchAny()
+                .into(CalculatorResult.class);
     }
 }
 

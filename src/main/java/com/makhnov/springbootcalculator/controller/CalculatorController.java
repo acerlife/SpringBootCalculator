@@ -1,5 +1,7 @@
 package com.makhnov.springbootcalculator.controller;
 
+import com.makhnov.springbootcalculator.CalculatorExpression;
+import com.makhnov.springbootcalculator.CalculatorResult;
 import com.makhnov.springbootcalculator.service.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +16,8 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     };
 
-    @GetMapping("/{postfix_expression}")
-    public @ResponseBody
-    String saveResult(@PathVariable String postfix_expression) throws Exception{
-       return calculatorService.saveResult(postfix_expression);
+    @PostMapping
+    public CalculatorResult saveResult(@RequestBody CalculatorExpression calculatorExpression) throws Exception{
+       return calculatorService.saveResult(calculatorExpression.getPostfixExpression());
     }
 }

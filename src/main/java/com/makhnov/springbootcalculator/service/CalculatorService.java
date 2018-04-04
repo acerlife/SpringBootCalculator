@@ -1,5 +1,6 @@
 package com.makhnov.springbootcalculator.service;
 
+import com.makhnov.springbootcalculator.CalculatorResult;
 import com.makhnov.springbootcalculator.dao.CalculatorDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class CalculatorService {
     }
 
     @Transactional
-    public String saveResult(String postfix_expression) throws Exception {
-       return calculatorDao.saveResult(postfix_expression);
+    public CalculatorResult saveResult(String postfixExpression) throws Exception {
+       return calculatorDao.saveResult(postfixExpression);
     }
 }
