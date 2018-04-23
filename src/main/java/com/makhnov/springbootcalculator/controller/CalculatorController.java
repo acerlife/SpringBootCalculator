@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/")
 public class CalculatorController {
     private final CalculatorService calculatorService;
-
-    @Autowired
+    
     public CalculatorController(CalculatorService calculatorService){
         this.calculatorService = calculatorService;
     };
