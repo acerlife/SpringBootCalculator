@@ -1,23 +1,16 @@
 package com.makhnov.springbootcalculator.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+import java.io.Serializable;
 
 @JsonDeserialize(using = CalculatorExpressionDeserializer.class)
-public class CalculatorExpression{
+@AllArgsConstructor
+@Getter
+public class CalculatorExpression implements Serializable {
 
     private final String postfixExpression;
     private final double expectedResult;
-
-    public CalculatorExpression(String postfixExpression, double expectedResult){
-        this.postfixExpression = postfixExpression;
-        this.expectedResult = expectedResult;
-    }
-
-    public String getPostfixExpression() {
-        return postfixExpression;
-    }
-
-    public double getExpectedResult() {
-        return expectedResult;
-    }
 }

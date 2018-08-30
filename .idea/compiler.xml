@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ParrentCalculator" target="1.8" />
       <module name="SpringBootCalculator" target="1.8" />
     </bytecodeTargetLevel>
   </component>

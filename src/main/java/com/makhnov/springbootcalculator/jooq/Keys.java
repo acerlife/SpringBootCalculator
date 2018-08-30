@@ -5,7 +5,9 @@ package com.makhnov.springbootcalculator.jooq;
 
 
 import com.makhnov.springbootcalculator.jooq.tables.PostfixResults;
+import com.makhnov.springbootcalculator.jooq.tables.UsersExpressions;
 import com.makhnov.springbootcalculator.jooq.tables.records.PostfixResultsRecord;
+import com.makhnov.springbootcalculator.jooq.tables.records.UsersExpressionsRecord;
 
 import javax.annotation.Generated;
 
@@ -33,12 +35,14 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final Identity<PostfixResultsRecord, Long> IDENTITY_POSTFIX_RESULTS_ = Identities0.IDENTITY_POSTFIX_RESULTS_;
+    public static final Identity<UsersExpressionsRecord, Long> IDENTITY_USERS_EXPRESSIONS = Identities0.IDENTITY_USERS_EXPRESSIONS;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
     public static final UniqueKey<PostfixResultsRecord> KEY_POSTFIX_RESULTS_PRIMARY = UniqueKeys0.KEY_POSTFIX_RESULTS_PRIMARY;
+    public static final UniqueKey<UsersExpressionsRecord> KEY_USERS_EXPRESSIONS_PRIMARY = UniqueKeys0.KEY_USERS_EXPRESSIONS_PRIMARY;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
@@ -51,9 +55,11 @@ public class Keys {
 
     private static class Identities0 {
         public static Identity<PostfixResultsRecord, Long> IDENTITY_POSTFIX_RESULTS_ = Internal.createIdentity(PostfixResults.POSTFIX_RESULTS_, PostfixResults.POSTFIX_RESULTS_.ID);
+        public static Identity<UsersExpressionsRecord, Long> IDENTITY_USERS_EXPRESSIONS = Internal.createIdentity(UsersExpressions.USERS_EXPRESSIONS, UsersExpressions.USERS_EXPRESSIONS.ID);
     }
 
     private static class UniqueKeys0 {
         public static final UniqueKey<PostfixResultsRecord> KEY_POSTFIX_RESULTS_PRIMARY = Internal.createUniqueKey(PostfixResults.POSTFIX_RESULTS_, "KEY_postfix_results_PRIMARY", PostfixResults.POSTFIX_RESULTS_.ID);
+        public static final UniqueKey<UsersExpressionsRecord> KEY_USERS_EXPRESSIONS_PRIMARY = Internal.createUniqueKey(UsersExpressions.USERS_EXPRESSIONS, "KEY_users_expressions_PRIMARY", UsersExpressions.USERS_EXPRESSIONS.ID);
     }
 }

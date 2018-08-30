@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jooq-3.10.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../jOOQ-3.10.6/jOOQ-3.10.6/jOOQ-lib/jooq-3.10.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

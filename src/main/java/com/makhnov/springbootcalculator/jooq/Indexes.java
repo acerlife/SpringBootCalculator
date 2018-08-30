@@ -5,6 +5,7 @@ package com.makhnov.springbootcalculator.jooq;
 
 
 import com.makhnov.springbootcalculator.jooq.tables.PostfixResults;
+import com.makhnov.springbootcalculator.jooq.tables.UsersExpressions;
 
 import javax.annotation.Generated;
 
@@ -32,6 +33,7 @@ public class Indexes {
     // -------------------------------------------------------------------------
 
     public static final Index POSTFIX_RESULTS_PRIMARY = Indexes0.POSTFIX_RESULTS_PRIMARY;
+    public static final Index USERS_EXPRESSIONS_PRIMARY = Indexes0.USERS_EXPRESSIONS_PRIMARY;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
@@ -39,5 +41,6 @@ public class Indexes {
 
     private static class Indexes0 {
         public static Index POSTFIX_RESULTS_PRIMARY = Internal.createIndex("PRIMARY", PostfixResults.POSTFIX_RESULTS_, new OrderField[] { PostfixResults.POSTFIX_RESULTS_.ID }, true);
+        public static Index USERS_EXPRESSIONS_PRIMARY = Internal.createIndex("PRIMARY", UsersExpressions.USERS_EXPRESSIONS, new OrderField[] { UsersExpressions.USERS_EXPRESSIONS.ID }, true);
     }
 }

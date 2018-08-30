@@ -4,12 +4,10 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.makhnov.springbootcalculator.model.CalculatorExpression;
 
 import java.io.IOException;
 
 public class CalculatorExpressionDeserializer extends JsonDeserializer {
-    @Override
     public Object deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         JsonNode node = jsonParser.getCodec().readTree(jsonParser);
         String postfixExpression = node.get("postfixExpression").textValue();

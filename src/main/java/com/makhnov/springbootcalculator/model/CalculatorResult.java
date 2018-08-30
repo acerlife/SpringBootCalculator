@@ -2,17 +2,13 @@ package com.makhnov.springbootcalculator.model;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.makhnov.springbootcalculator.CalculatorResultDeserializer;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @JsonDeserialize(using = CalculatorResultDeserializer.class)
+@Getter
+@AllArgsConstructor
 public class CalculatorResult {
     private final double result;
 
-    public CalculatorResult(double result){
-        this.result = result;
-    }
-
-    public double getResult() {
-        return result;
-    }
 }

@@ -4,6 +4,8 @@
 package com.makhnov.springbootcalculator.jooq;
 
 
+import com.makhnov.springbootcalculator.jooq.tables.UsersExpressions;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +30,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class PostfixResults extends SchemaImpl {
 
-    private static final long serialVersionUID = 1128465445;
+    private static final long serialVersionUID = -450438978;
 
     /**
      * The reference instance of <code>postfix_results</code>
@@ -39,6 +41,11 @@ public class PostfixResults extends SchemaImpl {
      * The table <code>postfix_results.postfix_results</code>.
      */
     public final com.makhnov.springbootcalculator.jooq.tables.PostfixResults POSTFIX_RESULTS_ = com.makhnov.springbootcalculator.jooq.tables.PostfixResults.POSTFIX_RESULTS_;
+
+    /**
+     * The table <code>postfix_results.users_expressions</code>.
+     */
+    public final UsersExpressions USERS_EXPRESSIONS = com.makhnov.springbootcalculator.jooq.tables.UsersExpressions.USERS_EXPRESSIONS;
 
     /**
      * No further instances allowed
@@ -65,6 +72,7 @@ public class PostfixResults extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            com.makhnov.springbootcalculator.jooq.tables.PostfixResults.POSTFIX_RESULTS_);
+            com.makhnov.springbootcalculator.jooq.tables.PostfixResults.POSTFIX_RESULTS_,
+            UsersExpressions.USERS_EXPRESSIONS);
     }
 }

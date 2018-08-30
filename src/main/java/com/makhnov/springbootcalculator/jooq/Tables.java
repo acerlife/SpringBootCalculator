@@ -5,6 +5,7 @@ package com.makhnov.springbootcalculator.jooq;
 
 
 import com.makhnov.springbootcalculator.jooq.tables.PostfixResults;
+import com.makhnov.springbootcalculator.jooq.tables.UsersExpressions;
 
 import javax.annotation.Generated;
 
@@ -26,4 +27,9 @@ public class Tables {
      * The table <code>postfix_results.postfix_results</code>.
      */
     public static final PostfixResults POSTFIX_RESULTS_ = com.makhnov.springbootcalculator.jooq.tables.PostfixResults.POSTFIX_RESULTS_;
+
+    /**
+     * The table <code>postfix_results.users_expressions</code>.
+     */
+    public static final UsersExpressions USERS_EXPRESSIONS = com.makhnov.springbootcalculator.jooq.tables.UsersExpressions.USERS_EXPRESSIONS;
 }
