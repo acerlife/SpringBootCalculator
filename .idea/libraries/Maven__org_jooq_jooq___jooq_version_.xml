@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jooq:jooq:${jooq.version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/${jooq.version}/jooq-${jooq.version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/${jooq.version}/jooq-${jooq.version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/${jooq.version}/jooq-${jooq.version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

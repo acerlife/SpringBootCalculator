@@ -1,6 +1,6 @@
 package com.makhnov.springbootcalculator.dao;
 
-import com.makhnov.springbootcalculator.CalculatorResult;
+import com.makhnov.springbootcalculator.model.CalculatorResult;
 import com.makhnov.springbootcalculator.PostfixResult;
 import com.makhnov.springbootcalculator.jooq.tables.PostfixResults;
 import org.jooq.*;

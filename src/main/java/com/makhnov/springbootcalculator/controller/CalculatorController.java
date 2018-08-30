@@ -1,9 +1,8 @@
 package com.makhnov.springbootcalculator.controller;
 
-import com.makhnov.springbootcalculator.CalculatorExpression;
-import com.makhnov.springbootcalculator.CalculatorResult;
+import com.makhnov.springbootcalculator.model.CalculatorExpression;
+import com.makhnov.springbootcalculator.model.CalculatorResult;
 import com.makhnov.springbootcalculator.service.CalculatorService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

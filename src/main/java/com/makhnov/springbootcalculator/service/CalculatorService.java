@@ -1,6 +1,6 @@
 package com.makhnov.springbootcalculator.service;
 
-import com.makhnov.springbootcalculator.CalculatorResult;
+import com.makhnov.springbootcalculator.model.CalculatorResult;
 import com.makhnov.springbootcalculator.dao.CalculatorDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

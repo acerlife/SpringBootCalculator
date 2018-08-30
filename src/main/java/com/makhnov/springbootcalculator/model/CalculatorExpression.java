@@ -1,4 +1,4 @@
-package com.makhnov.springbootcalculator;
+package com.makhnov.springbootcalculator.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
